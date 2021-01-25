@@ -1,11 +1,15 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
+/**
+ * NOTE: Works only in text inputs
+ */
 @Directive({
   selector: '[appCheckDecimalPlaces]',
 })
 export class CheckDecimalPlacesDirective {
-  decimalPlaces: number = 2;
-  private regex: RegExp = new RegExp(`^\\d*\\,?\\d{0,${this.decimalPlaces}}$`);
+  @Input('appCheckDecimalPlaces') decimalPlaces: number;
+
+  private regex: RegExp;
   private specialKeys: Array<string> = [
     'Backspace',
     'Tab',
@@ -21,9 +25,9 @@ export class CheckDecimalPlacesDirective {
 
   @HostListener('keydown', ['$event'])
   onKeyDown(event: KeyboardEvent) {
-    if (this.specialKeys.indexOf(event.key) !== -1) {
-      return;
-    }
+    this.createDecimalPlacesRegex();
+
+    if (this.validateSpecialKeys(event)) return;
 
     let current: string = this.el.nativeElement.value;
     const position = this.el.nativeElement.selectionStart;
@@ -32,8 +36,24 @@ export class CheckDecimalPlacesDirective {
       event.key == 'Decimal' ? ',' : event.key,
       current.slice(position),
     ].join('');
+
     if (next && !String(next).match(this.regex)) {
       event.preventDefault();
     }
+  }
+
+  createDecimalPlacesRegex(): void {
+    // Initialize decimal places
+    if (!this.decimalPlaces) {
+      this.decimalPlaces = 2;
+    }
+    this.regex = new RegExp(`^\\d*\\,?\\d{0,${this.decimalPlaces}}$`);
+  }
+
+  validateSpecialKeys(event: KeyboardEvent): boolean {
+    if (this.specialKeys.indexOf(event.key) !== -1) {
+      return true;
+    }
+    return false;
   }
 }
