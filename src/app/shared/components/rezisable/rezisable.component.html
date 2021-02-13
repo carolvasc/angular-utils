@@ -1,0 +1,14 @@
+<div class="gui" [appWindowResize]="windowSizeBreakpoints" (windowWidthChanged)="setIsCompact($event)">
+  <div class="left-panel">
+    <h2 *ngIf="sizeOption >= 2">Left panel</h2>
+    <h2 *ngIf="sizeOption < 2">LP</h2>
+  </div>
+  <div class="main-area">
+    <h2>Main area</h2>
+    <p>Resize this window by toggling side panels in the viewer.</p>
+    <p>The breakpoints are 300px and 500px.</p>
+  </div>
+  <div class="right-panel" *ngIf="sizeOption >= 1">
+    <h2>Right panel</h2>
+  </div>
+</div>
