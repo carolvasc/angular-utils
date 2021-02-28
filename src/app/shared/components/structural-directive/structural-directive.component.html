@@ -1,0 +1,24 @@
+<div>
+  <p class="d-inline mr-5">
+    The condition is currently
+    <span
+      [ngClass]="{
+        success: !condition,
+        warning: condition
+      }"
+      >{{ condition }}</span
+    >
+  </p>
+  <button (click)="handleCondition()">Change the condition</button>
+</div>
+
+<div>
+  <p *appUnless="condition" class="warning">
+    This paragraph is displayed because the condition is false
+  </p>
+
+  <p *appUnless="!condition" class="success">
+    Although the condition is true, this paragraph is displayed because
+    appUnless is set to false
+  </p>
+</div>
