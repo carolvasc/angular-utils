@@ -9,6 +9,7 @@ import { WindowResizeDirective } from './shared/directives/window-resize.directi
 import { RezisableComponent } from './shared/components/rezisable/rezisable.component';
 import { UnlessDirective } from './shared/directives/unless.directive';
 import { StructuralDirectiveComponent } from './shared/components/structural-directive/structural-directive.component';
+import { PoModule } from '@po-ui/ng-components';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { StructuralDirectiveComponent } from './shared/components/structural-dir
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PoModule
   ],
   providers: [],
   bootstrap: [AppComponent]
