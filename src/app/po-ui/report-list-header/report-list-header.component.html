@@ -1,0 +1,23 @@
+<div class="po-row">
+    <div class="po-md-12 po-p-0 po-mb-2">
+      <app-search-field
+        *ngIf="advancedSearchForm"
+        class="po-sm-12 po-md-4 po-xl-3 po-pl-md-0 po-p-sm-0"
+        (search)="onSimpleSearch()"
+        (searchAdvanced)="modal.open()"
+        [placeholder]="advancedSearchPlaceHolder"
+        [(ngModel)]="mainSearchField"
+      >
+      </app-search-field>
+      <!-- <ng-content select="tpg-report-button-area"></ng-content> -->
+    </div>
+  </div>
+  <po-modal
+    #modal
+    [p-title]="'Filtro avançado'"
+    [p-primary-action]="primaryModalButton"
+    [p-secondary-action]="secondaryModalButton"
+  >
+    <ng-content select="[advancedSearchModal]"></ng-content>
+  </po-modal>
+  
