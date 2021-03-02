@@ -1,4 +1,11 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, forwardRef, Input, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  forwardRef,
+  Input,
+  Output,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -11,7 +18,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => SearchFieldComponent),
       multi: true,
-    }
+    },
   ],
 })
 export class SearchFieldComponent implements ControlValueAccessor {
