@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +12,10 @@ import { RezisableComponent } from './shared/components/rezisable/rezisable.comp
 import { UnlessDirective } from './shared/directives/unless.directive';
 import { StructuralDirectiveComponent } from './shared/components/structural-directive/structural-directive.component';
 import { PoModule } from '@po-ui/ng-components';
+import { ListWithPageDefaultComponent } from './po-ui/list-with-page-default/list-with-page-default.component';
+import { ReportListHeaderComponent } from './po-ui/report-list-header/report-list-header.component';
+import { SearchFieldComponent } from './po-ui/search-field/search-field.component';
+import { PoModalModule } from '@po-ui/ng-components';
 
 @NgModule({
   declarations: [
@@ -19,14 +25,21 @@ import { PoModule } from '@po-ui/ng-components';
     WindowResizeDirective,
     RezisableComponent,
     UnlessDirective,
-    StructuralDirectiveComponent
+    StructuralDirectiveComponent,
+    ListWithPageDefaultComponent,
+    ReportListHeaderComponent,
+    SearchFieldComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PoModule
+    PoModalModule,
+    PoModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

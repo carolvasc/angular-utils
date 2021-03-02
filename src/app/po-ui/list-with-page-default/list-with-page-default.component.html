@@ -1,0 +1,80 @@
+<div>
+	<app-report-list-header
+			[advancedSearchForm]="advancedSearchForm"
+			[advancedSearchMainField]="'filter'"
+			[advancedSearchPlaceHolder]="'buscar'"
+	>
+		<form advancedSearchModal [formGroup]="advancedSearchForm">
+			<div class="po-row">
+				<po-input
+					[p-label]="'nome do avaliado'"
+					formControlName="appraiserName"
+					class="po-sm-12 po-md-6"
+				></po-input>
+				<po-input
+					[p-label]="'nome do gestor'"
+					formControlName="appraisedName"
+					class="po-sm-12 po-md-6"
+				></po-input>
+			</div>
+		</form>
+	</app-report-list-header>
+
+	<div class="body">
+		<po-list-view
+		p-hide-select-all
+		[p-items]="persons"
+		*ngIf="persons.length > 0"
+		>
+			<ng-template p-list-view-content-template let-person>
+				<div style="display: flex;">
+					<div class="po-row" style="flex: 1;">
+						<po-info
+							class="po-sm-12 po-md-4"
+							[p-label]="'nome'"
+							[p-value]="person.name"
+						>
+						</po-info>
+						<po-info
+							class="po-md-4 po-sm-12"
+							[p-label]="'email'"
+							[p-value]="person.email"
+						>
+						</po-info>
+						<po-info
+							class="po-sm-12 po-md-4"
+							[p-label]="'posição'"
+							[p-value]="person.position"
+						>
+						</po-info>
+					</div>
+				</div>
+			</ng-template>
+
+			<ng-template p-list-view-detail-template let-person>
+				<div style="display: flex;">
+					<div class="po-row" style="flex: 1;">
+						<po-info
+							class="po-sm-12 po-md-4"
+							[p-label]="'outro valor'"
+							[p-value]="'outro valor aqui'"
+						>
+						</po-info>
+						<po-info
+							class="po-md-4 po-sm-12"
+							[p-label]="'outro valor 2'"
+							[p-value]="'outro valor 2 aqui'"
+						>
+						</po-info>
+						<po-info
+							class="po-sm-12 po-md-4"
+							[p-label]="'outro valor 3'"
+							[p-value]="'outro valor 3 aqui'"
+						>
+						</po-info>
+					</div>
+				</div>
+			</ng-template>
+		</po-list-view>
+	</div>
+</div>
