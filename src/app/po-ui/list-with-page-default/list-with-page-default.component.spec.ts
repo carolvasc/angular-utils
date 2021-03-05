@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ListWithPageDefaultComponent } from './list-with-page-default.component';
 
@@ -6,7 +6,7 @@ describe('ListWithPageDefaultComponent', () => {
   let component: ListWithPageDefaultComponent;
   let fixture: ComponentFixture<ListWithPageDefaultComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ListWithPageDefaultComponent ]
     })

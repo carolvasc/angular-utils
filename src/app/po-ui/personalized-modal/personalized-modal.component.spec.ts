@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { PersonalizedModalComponent } from './personalized-modal.component';
 
@@ -6,7 +6,7 @@ describe('PersonalizedModalComponent', () => {
   let component: PersonalizedModalComponent;
   let fixture: ComponentFixture<PersonalizedModalComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ PersonalizedModalComponent ]
     })
