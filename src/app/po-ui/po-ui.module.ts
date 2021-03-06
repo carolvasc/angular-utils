@@ -10,7 +10,10 @@ import { PersonalizedModalComponent } from './personalized-modal/personalized-mo
 
 // Modulos
 import { PoModule } from '@po-ui/ng-components';
-import { PoModalModule } from '@po-ui/ng-components';
+import { PoModalModule, PoButtonModule } from '@po-ui/ng-components';
+
+// Serviços
+import { PersonalizedModalService } from './personalized-modal/personalized-modal.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,8 @@ import { PoModalModule } from '@po-ui/ng-components';
     CommonModule,
     PoModule,
     PoModalModule,
+    PoButtonModule,
+
     FormsModule,
     ReactiveFormsModule,
   ],
@@ -32,5 +37,6 @@ import { PoModalModule } from '@po-ui/ng-components';
     SearchFieldComponent,
     PersonalizedModalComponent,
   ],
+  providers: [PersonalizedModalService],
 })
 export class PoUiComponentsModule {}
