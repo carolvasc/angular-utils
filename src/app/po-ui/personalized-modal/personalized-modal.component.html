@@ -1,0 +1,11 @@
+<ng-container *ngIf="buttons$ | async as buttons">
+  <po-modal #modal
+    p-click-out="false"
+    [p-primary-action]="buttons.primaryAction"
+    [p-secondary-action]="buttons.secundaryAction"
+    [p-size]="size"
+    [p-hide-close]="hideClose"
+  >
+  
+  </po-modal>
+</ng-container>

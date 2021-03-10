@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
-import { ListWithPageDefaultComponent } from './list-with-page-default.component';
+import { PersonalizedModalComponent } from './personalized-modal.component';
 
-describe('ListWithPageDefaultComponent', () => {
-  let component: ListWithPageDefaultComponent;
-  let fixture: ComponentFixture<ListWithPageDefaultComponent>;
+describe('PersonalizedModalComponent', () => {
+  let component: PersonalizedModalComponent;
+  let fixture: ComponentFixture<PersonalizedModalComponent>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListWithPageDefaultComponent ]
+      declarations: [ PersonalizedModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ListWithPageDefaultComponent);
+    fixture = TestBed.createComponent(PersonalizedModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

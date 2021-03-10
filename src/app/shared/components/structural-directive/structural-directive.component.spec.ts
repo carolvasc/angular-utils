@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { StructuralDirectiveComponent } from './structural-directive.component';
 
@@ -6,7 +6,7 @@ describe('StructuralDirectiveComponent', () => {
   let component: StructuralDirectiveComponent;
   let fixture: ComponentFixture<StructuralDirectiveComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ StructuralDirectiveComponent ]
     })
