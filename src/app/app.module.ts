@@ -16,6 +16,7 @@ import { ListWithPageDefaultComponent } from './po-ui/list-with-page-default/lis
 import { ReportListHeaderComponent } from './po-ui/report-list-header/report-list-header.component';
 import { SearchFieldComponent } from './po-ui/search-field/search-field.component';
 import { PoModalModule } from '@po-ui/ng-components';
+import { ContainerContentTemplateComponent } from './study/container-content-template/container-content-template.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { PoModalModule } from '@po-ui/ng-components';
     ListWithPageDefaultComponent,
     ReportListHeaderComponent,
     SearchFieldComponent,
+    ContainerContentTemplateComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<!-- Primeiro exemplo -->
+<ng-template #estimateTemplate let-lessonsCounter="estimate">
+  <div>Aproximadamente {{lessonsCounter}} lessons...</div>
+</ng-template>
+
+<ng-container *ngTemplateOutlet="estimateTemplate; context: ctx"></ng-container>
+
+<!-- Segundo exemplo -->
+<ng-container *ngTemplateOutlet="sample; context: secondCtx"></ng-container>
+
+<ng-template #sample let-implicitValue let-variable="value">
+  <span>Implicit: {{ implicitValue }}! </span>
+  <span>Value set in context: {{ variable }}</span>
+</ng-template>
